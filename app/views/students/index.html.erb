@@ -1,0 +1,29 @@
+<h1>Students</h1>
+
+<%= link_to "Add New Student", new_student_path %>
+
+<table>
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Roll Number</th>
+            <th>Father Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @student.each do |student|%>
+        <tr>
+            <td><%=student.id%></td>
+            <td><%=student.name%></td>
+            <td><%=student.roll_num%></td>
+            <td><%=student.father%></td>
+            <td><%= link_to 'edit',edit_student_path(student) %></td>
+            
+        </tr>
+    <%end%>
+    </tbody>
+
+</table>

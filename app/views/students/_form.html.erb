@@ -1,0 +1,14 @@
+<%= form_for @student do |f| %>
+    <%= f.label :Student_Name%>
+    <%= f.text_field :name%><br/>
+
+    <%= f.label :Roll_Number%>
+    <%= f.text_field :roll_num%><br/>
+
+    <%= f.label :Father_Name%>
+    <%= f.text_field :father%><br/>
+
+    <%= f.submit "Add Student"%>
+<%end%>
+
+<%= link_to "Back", students_path %>

@@ -37,6 +37,13 @@ class StudentsController < ApplicationController
         @student = Student.all
     end
 
+    def destroy
+        @student = Student.find(params[:id])
+        @student.destroy
+        flash[:notice] = "Student Deleted"
+        redirect_to students_path
+    end
+
     private
     def student_params
         params.require(:student).permit(:name,:roll_num,:father)

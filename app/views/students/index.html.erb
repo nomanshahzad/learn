@@ -10,6 +10,7 @@
             <th>Roll Number</th>
             <th>Father Name</th>
             <th>Action</th>
+            <th></th>
         </tr>
     </thead>
 
@@ -20,7 +21,8 @@
             <td><%=student.name%></td>
             <td><%=student.roll_num%></td>
             <td><%=student.father%></td>
-            <td><%= link_to 'edit',edit_student_path(student) %></td>
+            <td><%= link_to 'edit',edit_student_path(student) %></td> 
+            <td><%= link_to 'Delete', student_path(student),data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %></td>
             
         </tr>
     <%end%>

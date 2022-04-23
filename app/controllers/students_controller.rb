@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
         @student = Student.new(student_params)
         if @student.save
             flash[:notice] = "Student is Added"
-            redirect_to student_path(@student)
+            redirect_to students_path
         else
             flash[:notice] = "Error"
             redirect_to new_student_path
@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
         @student = Student.find(params[:id])
         if @student.update(student_params)
             flash[:notice] = "Student is Updated"
-            redirect_to student_path(@student)
+            redirect_to students_path
         else
             flash[:notice] = "Error"
             redirect_to new_student_path

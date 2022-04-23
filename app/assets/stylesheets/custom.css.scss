@@ -22,4 +22,16 @@ $navbar-default-bg: darkblue;
 
 .welcome{
     text-align: center;
+    background-image: asset-url('back.jpg');
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.welcome h1{
+    color: #fff;
+}
+
+.welcome p{
+    color: #fff;
 }

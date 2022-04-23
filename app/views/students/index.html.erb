@@ -1,31 +1,23 @@
 <h1>Students</h1>
 
-<%= link_to "Add New Student", new_student_path %>
-
-<table>
-    <thead>
-        <tr>
-            <th>Student ID</th>
-            <th>Student Name</th>
-            <th>Roll Number</th>
-            <th>Father Name</th>
-            <th>Action</th>
-            <th></th>
-        </tr>
-    </thead>
-
-    <tbody>
-    <% @student.each do |student|%>
-        <tr>
-            <td><%=student.id%></td>
-            <td><%=student.name%></td>
-            <td><%=student.roll_num%></td>
-            <td><%=student.father%></td>
-            <td><%= link_to 'edit',edit_student_path(student) %></td> 
-            <td><%= link_to 'Delete', student_path(student),data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %></td>
-            
-        </tr>
-    <%end%>
-    </tbody>
-
-</table>
+<% @student.each do |student| %>
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="well well-lg">
+                <div class="article-title">
+                    <h3><%=student.name%></h3>
+                </div>
+                <div class="article-body">
+                    <%=student.roll_num%>
+                </div>
+                <div class="article-body">
+                    <%=student.father%>
+                </div>
+                <div class="article-actions">
+                    <%= link_to "Edit", edit_student_path(student), class: "btn btn-xs btn-primary" %>
+                    <%= link_to 'Delete', student_path(student),data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'},class: "btn btn-xs btn-danger" %>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
